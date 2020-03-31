@@ -13,8 +13,8 @@ Notes:
 
 5) For the Evaluator application, I used both Linked list based stacks (For the evaluation part) and Array Based stacks (For the conversion between postfix and infix part).
 
-6)The problem will throw an exception if the user enters a wrong input like dividing by 0 or putting a wrong expression.
+6) The problem will throw an exception if the user enters a wrong input like dividing by 0 or putting a wrong expression.
 
-7)In the evaluating part, You SHOULD seperate the numbers with spaces to identify the number. For example "1 1 +" is 2 but "11+" will throw an error because it would be 11 + ? ... But if you forgot the spaces between the operators and numbers or operators itself it would be handeled.
+7) In the evaluating part, You SHOULD seperate the numbers with spaces to identify the number. For example "1 1 +" is 2 but "11+" will throw an error because it would be 11 + ? ... But if you forgot the spaces between the operators and numbers or operators itself it would be handeled.
 
-8)For the evaulating part the inner variables of the function are float but in the end it would be casted to integer and returned by the function.
+8) For the evaulating part the inner variables of the function are float but in the end it would be casted to integer and returned by the function.
