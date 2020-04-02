@@ -18,3 +18,5 @@ Notes:
 7) In the evaluating part, You SHOULD seperate the numbers with spaces to identify the number. For example "1 1 +" is 2 but "11+" will throw an error because it would be 11 + ? ... But if you forgot the spaces between the operators and numbers or operators itself it would be handeled.
 
 8) For the evaulating part the inner variables of the function are float but in the end it would be casted to integer and returned by the function.
+
+9) For the conversion part the function handeles negative numbers using dummy zero, and it supports multi-digit numbers, and for the input the program handles the spaces so you don't have to put them and if you put them it will be okay. (The input isn't restricted with a specific form.)
