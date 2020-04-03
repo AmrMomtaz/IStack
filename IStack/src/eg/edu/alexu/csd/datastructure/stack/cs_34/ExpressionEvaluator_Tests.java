@@ -173,6 +173,20 @@ class ExpressionEvaluator_Tests
 		assertEquals("0 123 - 456 + 0 986 - *",test.infixToPostfix(expression));
 		expression = "(((3 + 5)))";
 		assertEquals("3 5 +",test.infixToPostfix(expression));
+		expression = "2 + 3 * 4";
+		assertEquals("2 3 4 * +",test.infixToPostfix(expression));
+		expression = "a * b + 5";
+		assertEquals("a b * 5 +",test.infixToPostfix(expression));
+		expression = "(1 + 2) * 7";
+		assertEquals("1 2 + 7 *",test.infixToPostfix(expression));
+		expression = "a * b / c";
+		assertEquals("a b * c /",test.infixToPostfix(expression));
+		expression = "(a / (b - c + d)) * (e - a) * c";
+		assertEquals("a b c - d + / e a - * c *",test.infixToPostfix(expression));
+		expression = "a / b - c + d * e - a * c";
+		assertEquals("a b / c - d e * + a c * -",test.infixToPostfix(expression));
+		expression = "a * (b + c) * d";
+		assertEquals("a b c + * d *",test.infixToPostfix(expression));
 	}
 	@Test
 	void test4()

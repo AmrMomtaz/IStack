@@ -80,10 +80,20 @@ public class ExpressionEvaluator implements IExpressionEvaluator
 				dummy = false;
 				number_assigned = true;
 			}
-			else if (Character.isDigit(ch) || ch == '(')
+			else if (Character.isDigit(ch) || ch == '(' || Character.isAlphabetic(ch))
 			{
-				String number = ch == '(' ? parenthesis(expression, stack, 
-						number_assigned, dummy) : ch + get_next_number(expression) ;
+				String number;
+				if (ch == '(')
+				{
+					number = parenthesis(expression, stack,	number_assigned, dummy);
+				}else if (Character.isDigit(ch))
+				{
+					number = ch + get_next_number(expression);
+				}
+				else
+				{
+					number = ""+ch;
+				}
 				if (!number_assigned)
 				{
 					number_assigned = true;
@@ -112,6 +122,10 @@ public class ExpressionEvaluator implements IExpressionEvaluator
 								else if (Character.isDigit(expression.charAt(index)))
 								{
 									next_number+=expression.charAt(index) + get_next_number(expression);
+								}
+								else if (Character.isAlphabetic(expression.charAt(index)))
+								{
+									next_number = "" + expression.charAt(index);
 								}
 								Result += number + ' ' + next_number + ' ' + next_operator
 										+ ' ' + operator + ' ' ;
